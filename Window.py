@@ -17,4 +17,5 @@ class Window:
             self.display.blit(self.webcam.get_image(), (0,0))
             pygame.display.update()
 
-wind = Window()
+    def get_display(self):
+        return self.display
