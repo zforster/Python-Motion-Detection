@@ -4,7 +4,7 @@ from Webcam import Webcam
 
 class Main:
     def __init__(self):
-        self.pixel_size = 20
+        self.pixel_size = 10
         self.camera = Webcam()
         self.size = self.camera.get_size()
         self.width = self.size[0]

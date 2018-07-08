@@ -14,6 +14,7 @@ class Logic:
 
     def generate_grid(self):
         image = self.camera.get_image()
+        self.grid = []
         for x in range(0, self.grid_width):
             self.grid.append([])
             for y in range(0, self.grid_height):
