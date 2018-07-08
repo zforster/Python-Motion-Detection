@@ -3,19 +3,11 @@ from Webcam import Webcam
 
 
 class Window:
-    def __init__(self):
+    def __init__(self, width, height):
         pygame.init()
-        self.webcam = Webcam()
-        self.size = self.webcam.get_size()
-        self.width = self.size[0]
-        self.height = self.size[1]
+        self.width = width
+        self.height = height
         self.display = pygame.display.set_mode((self.width, self.height))
-        self.set_image()
-
-    def set_image(self):
-        while True:
-            self.display.blit(self.webcam.get_image(), (0,0))
-            pygame.display.update()
 
     def get_display(self):
         return self.display
