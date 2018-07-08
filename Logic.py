@@ -11,14 +11,13 @@ class Logic:
         self.grid_width = int(self.width / self.pixel_size)
         self.grid_height = int(self.height / self.pixel_size)
         self.grid = []
-        self.generate_grid()
 
     def generate_grid(self):
         image = self.camera.get_image()
         for x in range(0, self.grid_width):
             self.grid.append([])
             for y in range(0, self.grid_height):
-                rect = pygame.draw.rect(image, (0, 0, 0), (x, y, self.pixel_size, self.pixel_size), 1)
+                rect = pygame.draw.rect(image, (255,255,255), (x * self.pixel_size, y * self.pixel_size, self.pixel_size, self.pixel_size), 1)
                 avg = pygame.transform.average_color(image, rect)
                 grey = (avg[0] + avg[1] + avg[2]) / 3
                 self.grid[x].append((grey,grey,grey))
