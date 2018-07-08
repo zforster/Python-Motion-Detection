@@ -1,14 +1,15 @@
 import pygame.camera
 
-class Camera:
+class Webcam:
     def __init__(self):
         pygame.camera.init()
         self.cam_list = pygame.camera.list_cameras()
-        self.webcam = self.cam_list[0]
+        self.webcam = pygame.camera.Camera(self.cam_list[0])
         self.webcam.start()
 
     def get_image(self):
-        return self.camera.get_image()
+        return self.webcam.get_image()
 
-cam = Camera()
-cam.get_image()
+    def get_size(self):
+        return self.webcam.get_size()
+    
