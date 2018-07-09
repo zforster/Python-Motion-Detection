@@ -15,6 +15,11 @@ class Window:
         pygame.display.update()
         self.check_quit()
 
+    def show_raw_image(self, image):
+        self.display.blit(image, (0,0))
+        pygame.display.update()
+        self.check_quit()
+
     def check_quit(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -22,3 +27,9 @@ class Window:
                 
     def get_display(self):
         return self.display
+
+    def draw_location(self, grid, position, pixel_size):
+        x = position[0]
+        y = position[1]
+        pygame.draw.rect(self.display, (0,255,0), (x * pixel_size, y * pixel_size, pixel_size, pixel_size))    
+        pygame.display.update()

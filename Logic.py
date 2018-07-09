@@ -31,5 +31,6 @@ class Logic:
             for y in range(0,len(grid_even[x])):
                 even = grid_even[x][y][0] + grid_even[x][y][1] + grid_even[x][y][2]
                 odd = grid_odd[x][y][0] + grid_odd[x][y][1] + grid_odd[x][y][2]
-                if((even - odd < 20 or even - odd > -20)):
-                    print("diff")
+                diff = even - odd
+                if(diff > 50 or diff < -50):
+                    return([x, y])
