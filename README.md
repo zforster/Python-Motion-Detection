@@ -5,3 +5,4 @@ This **does not** use OpenCV.
 # Requriements
 Python2
 Raspberry Pi (requires the pygame.camera library)
+USB Webcam
